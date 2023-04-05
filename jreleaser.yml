@@ -6,6 +6,7 @@ project:
     homepage: https://acme.com/awesome-app
   authors:
     - Andres Almiray
+    - Ixchel Ruiz
   license: Apache-2.0
   java:
     groupId: com.acme
