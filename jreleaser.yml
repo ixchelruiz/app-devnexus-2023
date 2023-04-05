@@ -1,0 +1,40 @@
+project:
+  name: app
+  description: Sample application
+  longDescription: Sample application
+  links:
+    homepage: https://acme.com/awesome-app
+  authors:
+    - Andres Almiray
+  license: Apache-2.0
+  java:
+    groupId: com.acme
+    version: 8
+  inceptionYear: 2021
+  stereotype: cli
+
+release:
+  github:
+    overwrite: true
+    sign: true
+    discussionCategoryName: 'Announcements'
+    changelog:
+      formatted: 'ALWAYS'
+      format: '- {{commitShortHash}} {{commitTitle}}'
+      preset: 'conventional-commits'
+      contributors:
+        format: '- {{contributorName}}{{#contributorUsernameAsLink}} ({{.}}){{/contributorUsernameAsLink}}'
+
+signing:
+  active: always
+  armored: true
+
+packagers:
+  brew:
+    active: always
+
+distributions:
+  app:
+    artifacts:
+      - path: target/distributions/{{distributionName}}/{{distributionName}}-{{projectVersion}}.zip
+      - path: target/distributions/{{distributionName}}/{{distributionName}}-{{projectVersion}}.tar.gz
